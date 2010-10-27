@@ -9,4 +9,4 @@ fi
 [ -z $UA_TOTAL ] && UA_TOTAL=0
 [ -z $UA_SEC ] && UA_SEC=0
 UA_NONSEC="$(($UA_TOTAL - $UA_SEC))"
-printf "${UA_TOTAL}\n${UA_SEC}\n${UA_NONSEC}"
+printf "${UA_TOTAL}\n${UA_SEC}\n${UA_NONSEC}\n"
