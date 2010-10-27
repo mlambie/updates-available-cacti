@@ -2,17 +2,17 @@
 
 A simple bash script and some Cacti templates to monitor Ubuntu and Debian systems for available package updates
 
-== Usage
+== Installation
 
-Install Cacti on your monitoring server, following the prompts.
+1. Install Cacti on your monitoring server, following the prompts.
 
     mlambie@server:~$ sudo aptitude update && sudo aptitude install cacti
     
-Install snmpd on your monitoring client.
+2. Install snmpd on your monitoring client.
 
     mlambie@client:~$ sudo aptitude update && sudo aptitude install snmpd
         
-Unlock snmpd from localhost. Edit the line that contains SNMPDOPTS and remove the trailing 127.0.0.1 if you want snmpd to serve on all network interfaces, or replace 127.0.0.1 with the monitoring server's IP to restrict access to that machine only.
+3. Unlock snmpd from localhost. Edit the line that contains SNMPDOPTS and remove the trailing 127.0.0.1 if you want snmpd to serve on all network interfaces, or replace 127.0.0.1 with the monitoring server's IP to restrict access to that machine only.
 
 Change:
 
@@ -26,10 +26,28 @@ Or something like:
 
     SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid 192.168.0.1'
 
-Install bash script
-Extend and validate snmpd
+4. Install the updates.sh on the monitoring client. I install my snmp monitoring scripts in /root/bin, but you might prefer to put them somewhere else.
+
+    mlambie@client:~$ sudo cp updates.sh /root/bin/updates.sh
+    
+5. Edit /etc/snmp/snmpd.conf and add the following line to the end of the file. Be sure to reference the full path to updates.sh.
+
+    extend updates /root/bin/updates.sh
+   
+6. Validate that updates.sh works and that snmpd returns the correct values when queried with SNMP. Note that your values will be different, and might be all zero, indicating that the client has no available upgrades.
+
+    mlambie@client:~$ /root/bin/updates.sh 
+    44
+    23
+    21
+    
+    mlambie@client:~$ snmpwalk -v1 -c publicz0r localhost 1.3.6.1.4.1.8072.1.3.2.4.1.2.7.117.112.100.97.116.101.115
+    NET-SNMP-EXTEND-MIB::nsExtendOutLine."updates".1 = STRING: 44
+    NET-SNMP-EXTEND-MIB::nsExtendOutLine."updates".2 = STRING: 23
+    NET-SNMP-EXTEND-MIB::nsExtendOutLine."updates".3 = STRING: 21
+        
 Install Cacti templates
 
 = License
 
-Copyright (c) 2010 Matthew Lambie, released under the MIT license
+Copyright (c) 2010 Matthew Lambie, released under the MIT license.
