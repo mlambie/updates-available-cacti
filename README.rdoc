@@ -4,6 +4,8 @@ A simple bash script and some Cacti templates to monitor Ubuntu and Debian syste
 
 == Installation
 
+Note that a modern version of update-notifier is required for this to work. Ubuntu Server 10.04 or later should work fine.
+
 === Install Cacti
 
 Install Cacti on your monitoring server, following the prompts.
