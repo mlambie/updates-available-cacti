@@ -70,7 +70,7 @@ You can add the graphs to a device by clicking "Create Graphs for this Host" fro
 
 <b>My graphs don't display!</b>
 
-That's a shame! Enable advanced logging in Cacti and ensure that the data is being returned correctly via SNMP to Cacti. I've found the <a href="http://forums.cacti.net/">Cacti Forums</a> to be a great source of help.
+That's a shame! Enable advanced logging in Cacti and ensure that the data is being returned correctly via SNMP to Cacti. I've found the {Cacti Forums}[http://forums.cacti.net/] to be a great source of help.
 
 <b>My graphs are too wide, how can I fix that?</b>
 
