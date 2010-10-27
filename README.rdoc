@@ -68,13 +68,13 @@ You can add the graphs to a device by clicking "Create Graphs for this Host" fro
 
 = FAQ
 
-*My graphs don't display!*
+<b>My graphs don't display!</b>
 
-  That's a shame! Enable advanced logging in Cacti and ensure that the data is being returned correctly via SNMP to Cacti. I've found the Cacti Forums to be a great source of help.
+That's a shame! Enable advanced logging in Cacti and ensure that the data is being returned correctly via SNMP to Cacti. I've found the Cacti Forums to be a great source of help.
 
-*My graphs are too wide, how can I fix that?*
+<b>My graphs are too wide, how can I fix that?</b>
 
-  I have 750px wide graphs on my Cacti installation, but that's not standard. You can adjust the width under Graph Template > Available Updates. I believe the default is 500px wide.
+I have 750px wide graphs on my Cacti installation, but that's not standard. You can adjust the width under Graph Template > Available Updates. I believe the default is 500px wide.
 
 = License
 
