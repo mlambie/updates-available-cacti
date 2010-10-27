@@ -66,6 +66,16 @@ Log into Cacti as an administrator, and choose Import/Export > Import Templates.
 
 You can add the graphs to a device by clicking "Create Graphs for this Host" from the specific device's information page and then choosing "Available Updates" from the Graph Templates area.
 
+= FAQ
+
+*My graphs don't display!*
+
+  That's a shame! Enable advanced logging in Cacti and ensure that the data is being returned correctly via SNMP to Cacti. I've found the Cacti Forums to be a great source of help.
+
+*My graphs are too wide, how can I fix that?*
+
+  I have 750px wide graphs on my Cacti installation, but that's not standard. You can adjust the width under Graph Template > Available Updates. I believe the default is 500px wide.
+
 = License
 
 Copyright (c) 2010 Matthew Lambie, released under the MIT license.
