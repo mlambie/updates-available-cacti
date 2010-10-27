@@ -1,6 +1,6 @@
 = Updates Available Cacti
 
-A simple bash script and some Cacti templates to monitor Ubuntu and Debian systems for available package updates
+A simple bash script and some Cacti templates to monitor Ubuntu and Debian systems for available package updates.
 
 == Installation
 
@@ -60,7 +60,11 @@ If you have locked snmpd to a single IP, you'll need to query that IP directly i
     NET-SNMP-EXTEND-MIB::nsExtendOutLine."updates".2 = STRING: 23
     NET-SNMP-EXTEND-MIB::nsExtendOutLine."updates".3 = STRING: 21
         
-=== Install Cacti templates
+=== Install and activate Cacti templates
+
+Log into Cacti as an administrator, and choose Import/Export > Import Templates. Browse to the XML file, or copy the content into the textarea and save. The templates should now be available to your Cacti installtion.
+
+You can add the graphs to a device by clicking "Create Graphs for this Host" from the specific device's information page and then choosing "Available Updates" from the Graph Templates area.
 
 = License
 
