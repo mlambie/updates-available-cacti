@@ -4,11 +4,15 @@ A simple bash script and some Cacti templates to monitor Ubuntu and Debian syste
 
 == Installation
 
-1. Install Cacti on your monitoring server, following the prompts.
+=== Install Cacti
+
+Install Cacti on your monitoring server, following the prompts.
 
     mlambie@server:~$ sudo aptitude update && sudo aptitude install cacti
     
-2. Install snmpd on your monitoring client.
+=== Install snmpd
+
+Install snmpd on your monitoring client.
 
     mlambie@client:~$ sudo aptitude update && sudo aptitude install snmpd
         
