@@ -4,9 +4,28 @@ A simple bash script and some Cacti templates to monitor Ubuntu and Debian syste
 
 == Usage
 
-Install Cacti
-Install snmpd
-Unlock snmpd from localhost
+Install Cacti on your monitoring server, following the prompts.
+
+    mlambie@server:~$ sudo aptitude update && sudo aptitude install cacti
+    
+Install snmpd on your monitoring client.
+
+    mlambie@client:~$ sudo aptitude update && sudo aptitude install snmpd
+        
+Unlock snmpd from localhost. Edit the line that contains SNMPDOPTS and remove the trailing 127.0.0.1 if you want snmpd to serve on all network interfaces, or replace 127.0.0.1 with the monitoring server's IP to restrict access to that machine only.
+
+Change:
+
+    SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid 127.0.0.1'
+    
+To:
+
+    SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid'
+    
+Or something like: 
+
+    SNMPDOPTS='-Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid 192.168.0.1'
+
 Install bash script
 Extend and validate snmpd
 Install Cacti templates
