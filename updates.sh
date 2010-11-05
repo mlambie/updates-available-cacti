@@ -1,5 +1,10 @@
 #!/bin/bash
+UPDATE_MOTD="/usr/lib/update-notifier/update-motd-updates-available"
 UPDATE_AVAIL="/var/lib/update-notifier/updates-available"
+
+if [ -x "$UPDATE_MOTD" ]; then
+  ${UPDATE_MOTD} > /dev/null 2>&1
+fi
 
 if [ -e "$UPDATE_AVAIL" ]; then
   UA_TOTAL="$(cat ${UPDATE_AVAIL} | grep "packages can be updated." | cut -f1 -d" ")"
