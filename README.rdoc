@@ -4,7 +4,9 @@ A simple bash script and some Cacti templates to monitor Ubuntu and Debian syste
 
 == Installation
 
-Note that a modern version of update-notifier is required for this to work. Ubuntu 8.04 or later should work fine, though it will take a few hours to generate the file that updates.sh checks for. Be patient, or work out how to kick off the process manually.
+Note that a modern version of update-notifier-common is required for this to work. Ubuntu 8.04 or later should work fine, though it will take a few hours to generate the file that updates.sh checks for. Be patient, or work out how to kick off the process manually.
+
+update-notifier-common is installed by default on more recent Ubuntu versions, including 10.04.
 
 === Install Cacti
 
