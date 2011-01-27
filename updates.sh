@@ -7,8 +7,8 @@ if [ -x "$UPDATE_MOTD" ]; then
 fi
 
 if [ -e "$UPDATE_AVAIL" ]; then
-  UA_TOTAL="$(cat ${UPDATE_AVAIL} | grep "packages can be updated." | cut -f1 -d" ")"
-  UA_SEC="$(cat ${UPDATE_AVAIL} | grep "updates are security updates." | cut -f1 -d" ")"  
+  UA_TOTAL="$(cat ${UPDATE_AVAIL} | grep "can be updated." | cut -f1 -d" ")"
+  UA_SEC="$(cat ${UPDATE_AVAIL} | grep "security updates" | cut -f1 -d" ")"  
 fi
 
 [ -z $UA_TOTAL ] && UA_TOTAL=0
